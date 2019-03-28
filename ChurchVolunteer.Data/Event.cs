@@ -33,5 +33,6 @@ namespace ChurchVolunteer.Data
         public int RequiredVolunteers { get; set; }
         [Display(Name = "Remaining Open Need")]
         public int RemainingNeed { get; set; }
+        public DateTimeOffset CreatedUtc { get; set; }
     }
 }

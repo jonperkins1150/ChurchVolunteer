@@ -28,6 +28,7 @@ namespace ChurchVolunteer.Service
                     Location = model.Location,
                     RequiredVolunteers = model.RequiredVolunteers,
                     RemainingNeed = model.RemainingNeed,
+                    CreatedUtc = DateTimeOffset.Now,
                 };
             using (var ctx = new ApplicationDbContext())
             {

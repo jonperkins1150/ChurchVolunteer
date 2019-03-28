@@ -69,6 +69,7 @@ namespace ChurchVolunteer.WebMVC.Controllers
                 new VolunteerEdit
                 {
                     VolunteerId = detail.VolunteerId,
+                    UserId = detail.UserId,
                     LoginId = detail.LoginId,
                     FirstName = detail.FirstName,
                     LastName = detail.LastName,
@@ -76,6 +77,7 @@ namespace ChurchVolunteer.WebMVC.Controllers
                     EmailAddress = detail.EmailAddress,
                     Day = detail.Day,
                     Location = detail.Location,
+                    CreatedUtc = detail.CreatedUtc,
 
                 };
             return View(model);

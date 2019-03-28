@@ -23,7 +23,6 @@ namespace ChurchVolunteer.Service
             var entity =
                 new Volunteer()
                 {
-                    VolunteerId = model.VolunteerId,
                     UserId = _userId,
                     LoginId = model.LoginId,
                     FirstName = model.FirstName,
@@ -32,7 +31,7 @@ namespace ChurchVolunteer.Service
                     EmailAddress = model.EmailAddress,
                     Day = model.Day,
                     Location = model.Location,
-                    CreatedUtc = model.CreatedUtc,
+                    CreatedUtc = DateTimeOffset.Now,
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -108,7 +107,7 @@ namespace ChurchVolunteer.Service
                                  new VolunteerDetail
                                  {
                                      VolunteerId = entity.VolunteerId,
-                                     UserId = _userId,
+                                     UserId = entity.UserId,
                                      LoginId = entity.LoginId,
                                      FirstName = entity.FirstName,
                                      LastName = entity.LastName,
@@ -130,7 +129,7 @@ namespace ChurchVolunteer.Service
                     .Volunteers
                     .Single(e => e.VolunteerId == model.VolunteerId);
 
-                entity.VolunteerId = model.VolunteerId;
+                entity.VolunteerId = entity.VolunteerId;
                 entity.UserId = model.UserId;
                 entity.LoginId = model.LoginId;
                 entity.FirstName = model.FirstName;

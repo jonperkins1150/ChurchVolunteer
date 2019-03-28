@@ -81,6 +81,7 @@
         <dd>
             @Html.DisplayFor(model => model.EmailAddress)
         </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Day)
         </dt>
@@ -89,8 +90,15 @@
             @Html.DisplayFor(model => model.Day)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Location)
+            @Html.DisplayNameFor(model => model.ServiceDate)
         </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+            </dt> 
 
         <dd>
             @Html.DisplayFor(model => model.Location)
@@ -107,6 +115,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.SignUpId }, new { @class = "actionlinks" }) |
-    @Html.ActionLink("Back to List", "Index", new { @class = "actionlinks" }, new { @class = "actionlinks" })
+    @Html.ActionLink("Edit", "Edit", new {  Model.SignUpId }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

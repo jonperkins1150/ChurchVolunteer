@@ -66,13 +66,16 @@ namespace ChurchVolunteer.WebMVC.Controllers
                 new SignUpEdit
                 {
                     EventId = detail.EventId,
+                    VolunteerId = detail.VolunteerId,
+                    SignUpId = detail.SignUpId,
+                    LoginId = detail.LoginId,
+                    FirstName = detail.FirstName,
+                    LastName = detail.LastName,
                     UserId = detail.UserId,
                     Day = detail.Day,
                     ServiceDate = detail.ServiceDate,
                     Location = detail.Location,
-                  
-
-                };
+    };
             return View(model);
         }
         [HttpPost]
@@ -80,7 +83,7 @@ namespace ChurchVolunteer.WebMVC.Controllers
         public ActionResult Edit(int id, SignUpEdit model)
         {
             if (!ModelState.IsValid) return View(model);
-            if (model.EventId != id)
+            if (model.SignUpId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);

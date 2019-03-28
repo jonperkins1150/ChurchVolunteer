@@ -11,11 +11,9 @@ namespace ChurchVolunteer.Data
     {
         [Key]
         public int VolunteerId { get; set; }
-        [Required]
+        
         public Guid UserId { get; set; }
         [Display(Name = "UserName")]
-
-
         public string LoginId { get; set; }
         [Required]
         [Display(Name = "First Name")]

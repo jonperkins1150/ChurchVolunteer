@@ -23,12 +23,10 @@ namespace ChurchVolunteer.Service
             var entity =
                 new SignUp()
                 {
-
                     UserId = _userId,
-                    SignUpId = model.SignUpId,
                     EventId = model.EventId,
                     VolunteerId = model.VolunteerId,
-
+                    CreatedUtc = DateTimeOffset.Now,
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -90,17 +88,17 @@ namespace ChurchVolunteer.Service
                     ctx
                         .SignUps
                         .Where(e => e.UserId == _userId)
-                        .Single(e => e.SignUpId == id);
+                        .Single(e =>e.SignUpId == id);
                 var volunteer =
                     ctx
                     .Volunteers
                     .Where(v => v.UserId == _userId)
-                    .Single(v => v.VolunteerId == id);
+                    .Single(v => v.VolunteerId == entity.VolunteerId);
                 var eventz =
                      ctx
                     .Events
-                    .Where(t => t.UserId == _userId)
-                    .Single(t => t.EventId == id);
+                    //.Where(t => t.UserId == _userId)
+                    .Single(t => t.EventId == entity.EventId);
                 return
                         new SignUpDetail
                         {
@@ -125,16 +123,18 @@ namespace ChurchVolunteer.Service
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                ctx
-                    .Events
-                    .Single(e => e.EventId == model.EventId);
+
 
                 var signups =
                   ctx
                   .SignUps
-                  //.Where(s => s.EventId == id)
+                   .Where(s => s.SignUpId == model.SignUpId)
                   .ToList();
+
+                 var entity =
+                ctx
+                    .Events
+                    .Single(e => e.EventId == model.EventId);
 
                 entity.EventId = model.EventId;
                 entity.UserId = _userId;

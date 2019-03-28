@@ -10,8 +10,7 @@ namespace ChurchVolunteer.Model.SignUp
 {
     public class SignUpCreate
     {
-        public int SignUpId { get; set; }
-        public Guid UserId { get; set; }
+        
         public int VolunteerId { get; set; }
         public int EventId { get; set; }
 

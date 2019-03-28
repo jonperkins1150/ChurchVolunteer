@@ -77,8 +77,9 @@ namespace ChurchVolunteer.WebMVC.Controllers
                     ServiceDate = detail.ServiceDate,
                     Location = detail.Location,
                     RequiredVolunteers = detail.RequiredVolunteers,
+                    CreatedUtc = detail.CreatedUtc,
 
-                };
+    };
             return View(model);
         }
         [HttpPost]
@@ -86,11 +87,11 @@ namespace ChurchVolunteer.WebMVC.Controllers
         public ActionResult Edit(int id, EventEdit model)
         {
             if (!ModelState.IsValid) return View(model);
-            if (model.EventId != id)
-            {
-                ModelState.AddModelError("", "Id Mismatch");
-                return View(model);
-            }
+            //if (model.EventId != id)
+            //{
+            //    ModelState.AddModelError("", "Id Mismatch");
+            //    return View(model);
+            //}
 
             var service = CreateEventService();
 
