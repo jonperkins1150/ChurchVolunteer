@@ -5,6 +5,16 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChurchVolunteer.WebMVC", "ChurchVolunteer.WebMVC\ChurchVolunteer.WebMVC.csproj", "{03D1C9E0-9E56-40EB-8738-12FB4831EA5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChurchVolunteer.Data", "ChurchVolunteer.Data\ChurchVolunteer.Data.csproj", "{0ED54BA3-AC45-47C4-A701-F43958D34335}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChurchVolunteer.Model", "ChurchVolunteer.Model\ChurchVolunteer.Model.csproj", "{674B35FB-1261-4774-AFEA-ACEBA1C2D769}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChurchVolunteer.Service", "ChurchVolunteer.Service\ChurchVolunteer.Service.csproj", "{0F4499EE-E672-432F-BAA4-A8F7CF4D5717}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChurchVolunteer.Test", "ChurchVolunteer.Test\ChurchVolunteer.Test.csproj", "{D23996C6-7B06-435A-BC94-1BBFE2CE4CF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChurchVolunteer.Contract", "ChurchVolunteer.Contract\ChurchVolunteer.Contract.csproj", "{040E85AC-7940-4F7B-9F4F-0828B100F21A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +25,26 @@ Global
 		{03D1C9E0-9E56-40EB-8738-12FB4831EA5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03D1C9E0-9E56-40EB-8738-12FB4831EA5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03D1C9E0-9E56-40EB-8738-12FB4831EA5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ED54BA3-AC45-47C4-A701-F43958D34335}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ED54BA3-AC45-47C4-A701-F43958D34335}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ED54BA3-AC45-47C4-A701-F43958D34335}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ED54BA3-AC45-47C4-A701-F43958D34335}.Release|Any CPU.Build.0 = Release|Any CPU
+		{674B35FB-1261-4774-AFEA-ACEBA1C2D769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{674B35FB-1261-4774-AFEA-ACEBA1C2D769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{674B35FB-1261-4774-AFEA-ACEBA1C2D769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{674B35FB-1261-4774-AFEA-ACEBA1C2D769}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F4499EE-E672-432F-BAA4-A8F7CF4D5717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F4499EE-E672-432F-BAA4-A8F7CF4D5717}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F4499EE-E672-432F-BAA4-A8F7CF4D5717}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F4499EE-E672-432F-BAA4-A8F7CF4D5717}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D23996C6-7B06-435A-BC94-1BBFE2CE4CF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D23996C6-7B06-435A-BC94-1BBFE2CE4CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D23996C6-7B06-435A-BC94-1BBFE2CE4CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D23996C6-7B06-435A-BC94-1BBFE2CE4CF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{040E85AC-7940-4F7B-9F4F-0828B100F21A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{040E85AC-7940-4F7B-9F4F-0828B100F21A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{040E85AC-7940-4F7B-9F4F-0828B100F21A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{040E85AC-7940-4F7B-9F4F-0828B100F21A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

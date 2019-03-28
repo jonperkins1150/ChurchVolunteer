@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using ChurchVolunteer.WebMVC.Models;
+using ChurchVolunteer.Data;
 
 namespace ChurchVolunteer.WebMVC
 {

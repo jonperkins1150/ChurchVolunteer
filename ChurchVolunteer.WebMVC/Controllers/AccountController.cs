@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ChurchVolunteer.WebMVC.Models;
+using ChurchVolunteer.Data;
 
 namespace ChurchVolunteer.WebMVC.Controllers
 {

@@ -1,6 +1,36 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url("img/agriculture-church-countryside-1782015.jpg");
+    background-size: cover;
+    opacity: 2.0;
+}
+
+.transparent {
+    background-color: transparent;
+}
+
+.actionlinks {
+    color: black;
+    font-weight: 400;
+}
+
+.Bottomfoot {
+    position: fixed;
+    left: 0;
+    font-size: 12pt;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.NavId {
+    font-size: 15pt;
+}
+
+.NavTitle {
+    font-size: 20pt;
 }
 
 /* Set padding to keep content from hitting the edges */
