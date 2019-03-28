@@ -73,7 +73,7 @@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.EventId }, new { @class = "actionlinks" }) |
                     @Html.ActionLink("Details", "Details", new { id = item.EventId }, new { @class = "actionlinks" }) |
-                    @Html.ActionLink("SignUp", "Create", "SignUp", new { item.EventId }, new { @class = "actionlinks" }) |
+                    @Html.ActionLink("SignUp", "Create", "SignUp", new { id = item.EventId }, new { @class = "actionlinks" }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.EventId }, new { @class = "actionlinks" })
                 </td>
             </tr>

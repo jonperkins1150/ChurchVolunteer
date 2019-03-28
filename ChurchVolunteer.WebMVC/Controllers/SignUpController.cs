@@ -1,4 +1,5 @@
-﻿using ChurchVolunteer.Model.SignUp;
+﻿using ChurchVolunteer.Model.Event;
+using ChurchVolunteer.Model.SignUp;
 using ChurchVolunteer.Service;
 using Microsoft.AspNet.Identity;
 using System;
@@ -21,10 +22,22 @@ namespace ChurchVolunteer.WebMVC.Controllers
             return View(model);
         }
         // CREATE: SIGNUP
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
-            return View();
+            var service = CreateEventService();
+            var eventDetail = service.GetEventById(id);
+            var model =
+                new SignUpCreate
+                {
+                    EventId = eventDetail.EventId,
+                    Day = eventDetail.Day,
+                    ServiceDate = eventDetail.ServiceDate,
+                    Location = eventDetail.Location,
+                    RequiredVolunteers = eventDetail.RequiredVolunteers,
+                };
+            return View(model);
         }
+
         // PERSIST TO DATABASE: SIGNUP
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -43,12 +56,7 @@ namespace ChurchVolunteer.WebMVC.Controllers
 
             return View(model);
         }
-        private SignUpService CreateSignUpService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new SignUpService(userId);
-            return service;
-        }
+       
         // DETAILS: SIGNUP
         public ActionResult Details(int id)
         {
@@ -75,7 +83,7 @@ namespace ChurchVolunteer.WebMVC.Controllers
                     Day = detail.Day,
                     ServiceDate = detail.ServiceDate,
                     Location = detail.Location,
-    };
+                };
             return View(model);
         }
         [HttpPost]
@@ -119,6 +127,20 @@ namespace ChurchVolunteer.WebMVC.Controllers
             TempData["SaveResult"] = "The SignUp has been Deleted";
 
             return RedirectToAction("Index");
+        }
+
+        public SignUpService CreateSignUpService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new SignUpService(userId);
+            return service;
+        }
+
+        public EventService CreateEventService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new EventService(userId);
+            return service;
         }
     }
 }
