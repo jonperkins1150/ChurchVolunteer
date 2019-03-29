@@ -21,7 +21,7 @@ namespace ChurchVolunteer.Service
             var entity =
                 new Event()
                 {
-                    EventId = model.EventId,
+                    
                     UserId = _userId,   
                     Day = model.Day,
                     ServiceDate = model.ServiceDate,

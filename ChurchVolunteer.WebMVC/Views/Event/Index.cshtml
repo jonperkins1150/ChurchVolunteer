@@ -21,12 +21,7 @@
 }
     <table class="table">
         <tr>
-            @*<th>
-                @Html.DisplayNameFor(model => model.EventId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserId)
-            </th>*@
+
             <th>
                 @Html.DisplayNameFor(model => model.Day)
             </th>
@@ -39,22 +34,17 @@
             <th>
                 @Html.DisplayNameFor(model => model.RequiredVolunteers)
             </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.RemainingNeed)
-            </th>*@
+
 
             <th></th>
         </tr>
 
         @foreach (var item in Model)
         {
+            @Html.HiddenFor(modelItem => item.EventId)
             <tr>
-                @*<td>
-                    @Html.DisplayFor(modelItem => item.EventId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UserId)
-                </td>*@
+
+
                 <td>
                     @Html.DisplayFor(modelItem => item.Day)
                 </td>
@@ -67,9 +57,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.RequiredVolunteers)
                 </td>
-                @*<td>
-                    @Html.DisplayFor(modelItem => item.RemainingNeed)
-                </td>*@
+
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.EventId }, new { @class = "actionlinks" }) |
                     @Html.ActionLink("Details", "Details", new { id = item.EventId }, new { @class = "actionlinks" }) |

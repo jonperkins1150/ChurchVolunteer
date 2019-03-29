@@ -18,17 +18,28 @@ namespace ChurchVolunteer.WebMVC.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new SignUpService(userId);
             var model = service.GetSignUp();
+            var evtsvc = CreateEventService();
+            var eventDetail = evtsvc.GetEvents();
+            var volsvc = CreateVolunteerService();
+            var volDetail = volsvc.GetVolunteers();
 
             return View(model);
         }
         // CREATE: SIGNUP
         public ActionResult Create(int id)
         {
-            var service = CreateEventService();
+            var service = CreateEventService();    
             var eventDetail = service.GetEventById(id);
+            var volsvc = CreateVolunteerService();
+            
+            var volunteerDetail = volsvc.GetVolunteerById(volsvc.GetVolunteerIdByUserId());
             var model =
                 new SignUpCreate
                 {
+                    VolunteerId = volunteerDetail.VolunteerId,
+                    LoginId = volunteerDetail.LoginId,
+                    FirstName = volunteerDetail.FirstName,
+                    LastName = volunteerDetail.LastName,
                     EventId = eventDetail.EventId,
                     Day = eventDetail.Day,
                     ServiceDate = eventDetail.ServiceDate,
@@ -140,6 +151,13 @@ namespace ChurchVolunteer.WebMVC.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new EventService(userId);
+            return service;
+        }
+
+        public VolunteerService CreateVolunteerService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new VolunteerService(userId);
             return service;
         }
     }

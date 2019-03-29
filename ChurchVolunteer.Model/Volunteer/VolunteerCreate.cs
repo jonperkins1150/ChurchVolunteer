@@ -11,9 +11,7 @@ namespace ChurchVolunteer.Model.Volunteer
     public class VolunteerCreate
     {
       
-        public int VolunteerId { get; set; }
-        
-        public Guid UserId { get; set; }
+
         [Display(Name = "UserName")]
         public string LoginId { get; set; }   
         [Display(Name = "First Name")]

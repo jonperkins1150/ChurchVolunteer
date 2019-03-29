@@ -160,6 +160,18 @@ namespace ChurchVolunteer.Service
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        //-----------------------------------------------------------------------------------------------
+
+        public int GetVolunteerIdByUserId()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var volunteer = ctx.Volunteers.Single(v => v.UserId == _userId);
+                return volunteer.VolunteerId;
+            }
+
+        }
     }
 }
 

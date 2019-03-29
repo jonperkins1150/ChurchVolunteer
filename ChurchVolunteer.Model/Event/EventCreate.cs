@@ -10,9 +10,7 @@ namespace ChurchVolunteer.Model.Event
 {
     public class EventCreate
     {
-        public int EventId { get; set; }
 
-        public Guid UserId { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [Display(Name = "Service Date")]

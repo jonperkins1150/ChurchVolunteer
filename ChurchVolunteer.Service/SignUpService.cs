@@ -43,7 +43,7 @@ namespace ChurchVolunteer.Service
                 var query =
                     ctx
                         .SignUps
-                        .Where(e => e.UserId == _userId)
+                         .Where(e => e.UserId == _userId)
                         .Select(
                             e =>
                                 new SignUpListItem
@@ -51,6 +51,12 @@ namespace ChurchVolunteer.Service
                                     SignUpId = e.SignUpId,
                                     EventId = e.EventId,
                                     VolunteerId = e.VolunteerId,
+                                    LoginId = e.Volunteer.LoginId,
+                                    FirstName = e.Volunteer.FirstName,
+                                    LastName = e.Volunteer.LastName, 
+                                    Day = e.Event.Day,
+                                    ServiceDate = e.Event.ServiceDate,
+                                    Location = e.Event.Location,
                                     UserId = e.UserId,
 
                                 }
