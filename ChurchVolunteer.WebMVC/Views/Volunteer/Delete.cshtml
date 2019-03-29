@@ -11,7 +11,7 @@
     <h4>VolunteerDetail</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.VolunteerId)
         </dt>
 
@@ -25,7 +25,7 @@
 
         <dd>
             @Html.DisplayFor(model => model.UserId)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.LoginId)
@@ -68,11 +68,18 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
+            @Html.DisplayNameFor(model => model.Day)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CreatedUtc)
+            @Html.DisplayFor(model => model.Day)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
         </dd>
 
     </dl>

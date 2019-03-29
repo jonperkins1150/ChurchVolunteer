@@ -57,17 +57,17 @@
             @Html.DisplayFor(model => model.RequiredVolunteers)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.RemainingNeed)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.RemainingNeed)
-        </dd>
+        </dd>*@
 
     </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new {  id = Model.EventId}, new { @class = "actionlinks" }) |
-    @Html.ActionLink("Back to List", "Index", new { @class = "actionlinks" })
+    @Html.ActionLink("Back to List", "Index", new { @class = "actionlinks" }, new { @class = "actionlinks" })
 </p>

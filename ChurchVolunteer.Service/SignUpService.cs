@@ -34,11 +34,12 @@ namespace ChurchVolunteer.Service
                 ctx.SignUps.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
-        }
+        } //TODO
         public IEnumerable<SignUpListItem> GetSignUp()
         {
             using (var ctx = new ApplicationDbContext())
             {
+
                 var query =
                     ctx
                         .SignUps

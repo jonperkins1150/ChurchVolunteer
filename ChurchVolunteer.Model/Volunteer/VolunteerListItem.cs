@@ -13,7 +13,7 @@ namespace ChurchVolunteer.Model.Volunteer
         [Required]
         [Key]
         public int VolunteerId { get; set; }
-        
+
         public Guid UserId { get; set; }
         [Display(Name = "UserName")]
         public string LoginId { get; set; }   

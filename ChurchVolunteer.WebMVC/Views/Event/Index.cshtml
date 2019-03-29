@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<ChurchVolunteer.Model.Event.EventListItem>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Event List";
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create", new { @class = "actionlinks" })
+    @Html.ActionLink("Create New", "Create", new { @class = "actionlinks" }, new { @class = "actionlinks" })
 </p>
 @if (TempData.ContainsKey("SaveResult"))
 {
@@ -21,12 +21,12 @@
 }
     <table class="table">
         <tr>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.EventId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.UserId)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Day)
             </th>
@@ -39,9 +39,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.RequiredVolunteers)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.RemainingNeed)
-            </th>
+            </th>*@
 
             <th></th>
         </tr>
@@ -49,12 +49,12 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.EventId)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.UserId)
-                </td>
+                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.Day)
                 </td>
@@ -67,9 +67,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.RequiredVolunteers)
                 </td>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.RemainingNeed)
-                </td>
+                </td>*@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.EventId }, new { @class = "actionlinks" }) |
                     @Html.ActionLink("Details", "Details", new { id = item.EventId }, new { @class = "actionlinks" }) |

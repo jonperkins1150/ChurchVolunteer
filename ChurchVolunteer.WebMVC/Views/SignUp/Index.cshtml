@@ -4,11 +4,9 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>SignUp List</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create", new { @class = "actionlinks" }, new { @class = "actionlinks" })
-</p>
+
 @if (TempData.ContainsKey("SaveResult"))
 {
     <div class="alert alert-success fade in" role="alert">
@@ -22,47 +20,53 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.SignUpId)
+                @Html.DisplayNameFor(model => model.LoginId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UserId)
+                @Html.DisplayNameFor(model => model.FirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.VolunteerId)
+                @Html.DisplayNameFor(model => model.LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EventId)
+                @Html.DisplayNameFor(model => model.Day)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CreatedUtc)
+                @Html.DisplayNameFor(model => model.ServiceDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
             </th>
             <th></th>
         </tr>
 
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SignUpId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UserId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunteerId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EventId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedUtc)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.SignUpId }, new { @class = "actionlinks" }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.SignUpId }, new { @class = "actionlinks" }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.SignUpId }, new { @class = "actionlinks" })
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoginId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.SignUpId }, new { @class = "actionlinks" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SignUpId }, new { @class = "actionlinks" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SignUpId }, new { @class = "actionlinks" })
+            </td>
+        </tr>
         }
 
     </table>
